@@ -309,3 +309,243 @@ ul, ol {
   background: rgba(52, 255, 184, 0.15);
   transition: 0.2s ease;
 }
+.social-links a {
+  display: inline-block;
+  animation: iconFloat 2s infinite ease-in-out;
+}
+
+@keyframes iconFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+.social-links a:hover {
+  animation: iconFloatHover 1s infinite alternate;
+  color: #4ca3ff !important;
+}
+
+@keyframes iconFloatHover {
+  from { text-shadow: 0 0 8px #4ca3ff; }
+  to   { text-shadow: 0 0 18px #4ca3ff; }
+}
+
+.progress {
+  height: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 14px;
+  background: linear-gradient(90deg, #4ca3ff, #7bc8ff, #34ffb8);
+  background-size: 300% 100%;
+  animation: moveGradient 3s ease infinite, pulseGlow 1.4s infinite alternate ease-in-out;
+  box-shadow: 0 0 18px rgba(76, 163, 255, 0.8);
+}
+
+@keyframes moveGradient {
+  0% { background-position: 0% 0; }
+  50% { background-position: 100% 0; }
+  100% { background-position: 0% 0; }
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(76, 163, 255, 0.6);
+    transform: scaleX(1);
+  }
+  100% {
+    box-shadow: 0 0 24px rgba(52, 255, 184, 1);
+    transform: scaleX(1.03);
+  }
+}
+
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: #0e0e10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+  transition: opacity 0.4s ease;
+}
+
+.loader-dots {
+  display: flex;
+  gap: 12px;
+}
+
+.loader-dots .dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #4ca3ff;
+  animation: pulseDots 0.8s infinite alternate ease-in-out;
+}
+
+.loader-dots .dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loader-dots .dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes pulseDots {
+  0% { transform: scale(0.6); opacity: 0.4; }
+  100% { transform: scale(1.3); opacity: 1; }
+}
+
+body.loaded #preloader {
+  opacity: 0;
+  pointer-events: none;
+}
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: #000;          
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: hide 3s forwards;  
+  z-index: 9999;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #444;      
+  border-top-color: #fff;      
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes hide {
+  90% { opacity: 1; }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+
+  .spinner {
+    animation: none;
+    border-top-color: #ccc;
+  }
+
+  #preloader {
+    animation: none;
+    opacity: 1;
+    visibility: visible;
+    transition: none;
+  }
+}
+.services {
+  padding: 80px 20px;
+  color: white;
+  text-align: center;
+
+  /* Gradientas */
+  background: linear-gradient(135deg, #5ee7df, #b490ca, #ff6b6b);
+  background-size: 300% 300%;
+
+  /* Animacija judina gradientą */
+  animation: gradientMove 10s ease infinite;
+  border-radius: 10px;
+}
+
+/* Gradiento judėjimo animacija */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.about {
+  position: relative;
+  padding: 120px 20px;
+  text-align: center;
+  background: #111;
+  color: #fff;
+  overflow: hidden;
+}
+
+.shape {
+  position: absolute;
+  opacity: 0.6;
+}
+
+/* Apskritimas */
+.circle {
+  width: 80px;
+  height: 80px;
+  background: #4ade80;
+  border-radius: 50%;
+  top: 40px;
+  left: 40px;
+
+  animation: rotate 6s linear infinite, floatY 4s ease-in-out infinite;
+}
+
+/* Trikampis */
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 80px solid #60a5fa;
+  position: absolute;
+  top: 150px;
+  right: 40px;
+
+  animation: floatX 5s ease-in-out infinite;
+}
+
+/* Kvadratas */
+.square {
+  width: 60px;
+  height: 60px;
+  background: #f472b6;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  animation: scaleUp 4s ease-in-out infinite;
+}
+
+/* Animacijos */
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-20px); }
+}
+
+@keyframes floatX {
+  0%, 100% { transform: translateX(0); }
+  50%      { transform: translateX(-30px); }
+}
+
+@keyframes scaleUp {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.3); }
+}
