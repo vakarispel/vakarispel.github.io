@@ -1053,42 +1053,79 @@ Laisvalaikiu domiuosi web kūrimu, UI/UX dizainu, programų funkcionalumo tobuli
               <h3>Get In Touch</h3>
               <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis.</p>
 
-              <form action="forms/contact.php" method="post" class="php-email-form">
-                <div class="row gy-4">
+              <form action="#" method="post" class="php-email-form">
 
-                  <div class="col-md-6">
-                    <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                  </div>
+<form class="php-email-form">
+  <div class="row gy-4">
 
-                  <div class="col-md-6 ">
-                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                  </div>
+    <!-- Vardas -->
+    <div class="col-md-6 form-group">
+      <label>Vardas</label>
+      <input type="text" name="vardas" class="form-control" placeholder="Vardas" required>
+      <div class="form-error"></div>
+    </div>
 
-                  <div class="col-12">
-                    <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                  </div>
+    <!-- Pavardė -->
+    <div class="col-md-6 form-group">
+      <label>Pavardė</label>
+      <input type="text" name="pavarde" class="form-control" placeholder="Pavardė" required>
+      <div class="form-error"></div>
+    </div>
 
-                  <div class="col-12">
-                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                  </div>
+    <!-- El. paštas -->
+    <div class="col-md-6 form-group">
+      <label>Email</label>
+      <input type="email" name="email" class="form-control" placeholder="El. paštas" required>
+      <div class="form-error"></div>
+    </div>
 
-                  <div class="col-12 text-center">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
+    <!-- Telefono numeris -->
+    <div class="col-md-6 form-group">
+      <label>Telefonas</label>
+      <input type="tel" name="telefonas" class="form-control" placeholder="Telefono numeris" required>
+      <div class="form-error"></div>
+    </div>
 
-                    <button type="submit" class="btn">Send Message</button>
-                  </div>
+    <!-- Adresas -->
+    <div class="col-12 form-group">
+      <label>Adresas</label>
+      <input type="text" name="adresas" class="form-control" placeholder="Adresas" required>
+      <div class="form-error"></div>
+    </div>
 
-                </div>
-              </form>
+    <!-- Vertinimo klausimai (range) -->
+    <div class="col-12">
+      <label>Kaip vertinate svetainės dizainą? (1–10)</label>
+      <input type="range" name="vertinimas1" min="1" max="10" class="form-range" value="5">
+      <span class="range-value">5</span>
+    </div>
 
-            </div>
-          </div>
+    <div class="col-12">
+      <label>Kaip vertinate patogumą naudotis? (1–10)</label>
+      <input type="range" name="vertinimas2" min="1" max="10" class="form-range" value="5">
+      <span class="range-value">5</span>
+    </div>
 
-        </div>
+    <div class="col-12">
+      <label>Kaip vertinate bendrą įspūdį? (1–10)</label>
+      <input type="range" name="vertinimas3" min="1" max="10" class="form-range" value="5">
+      <span class="range-value">5</span>
+    </div>
 
-      </div>
+    <!-- Mygtukas -->
+    <div class="col-12 text-center">
+      <button type="submit" class="btn" disabled>Submit</button>
+    </div>
+  </div>
+</form>
+
+<!-- Duomenų atvaizdavimui -->
+<div id="form-output" class="mt-4"></div>
+<!-- Pop-up pranešimas -->
+<div id="success-popup" class="success-popup">Duomenys pateikti sėkmingai!</div>
+
+
+
 
     </section><!-- /Contact Section -->
 
@@ -1119,7 +1156,7 @@ Laisvalaikiu domiuosi web kūrimu, UI/UX dizainu, programų funkcionalumo tobuli
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -1131,6 +1168,7 @@ Laisvalaikiu domiuosi web kūrimu, UI/UX dizainu, programų funkcionalumo tobuli
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/custom.js"></script>
 
 </body>
 
