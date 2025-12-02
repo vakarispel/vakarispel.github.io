@@ -455,16 +455,13 @@ body.loaded #preloader {
   color: white;
   text-align: center;
 
-  /* Gradientas */
   background: linear-gradient(135deg, #5ee7df, #b490ca, #ff6b6b);
   background-size: 300% 300%;
 
-  /* Animacija judina gradientą */
   animation: gradientMove 10s ease infinite;
   border-radius: 10px;
 }
 
-/* Gradiento judėjimo animacija */
 @keyframes gradientMove {
   0% {
     background-position: 0% 50%;
@@ -490,7 +487,6 @@ body.loaded #preloader {
   opacity: 0.6;
 }
 
-/* Apskritimas */
 .circle {
   width: 80px;
   height: 80px;
@@ -502,7 +498,6 @@ body.loaded #preloader {
   animation: rotate 6s linear infinite, floatY 4s ease-in-out infinite;
 }
 
-/* Trikampis */
 .triangle {
   width: 0;
   height: 0;
@@ -516,7 +511,6 @@ body.loaded #preloader {
   animation: floatX 5s ease-in-out infinite;
 }
 
-/* Kvadratas */
 .square {
   width: 60px;
   height: 60px;
@@ -527,8 +521,6 @@ body.loaded #preloader {
 
   animation: scaleUp 4s ease-in-out infinite;
 }
-
-/* Animacijos */
 
 @keyframes rotate {
   from { transform: rotate(0deg); }
@@ -548,4 +540,173 @@ body.loaded #preloader {
 @keyframes scaleUp {
   0%, 100% { transform: scale(1); }
   50%      { transform: scale(1.3); }
+}
+
+.contact-form .form-control {
+  background: rgba(25, 25, 25, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e8e8e8;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+  transition: 0.25s ease;
+}
+
+.contact-form .form-control:focus {
+  border-color: #4ca3ff;
+  box-shadow: 0 0 15px rgba(76, 163, 255, 0.5);
+  background: rgba(25, 25, 25, 0.95);
+  outline: none;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 6px;
+  margin-top: 10px;
+  font-weight: 600;
+  color: #b8dfff;
+  letter-spacing: 0.4px;
+}
+
+.contact-form .form-range {
+  width: 100%;
+  margin-top: 6px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.contact-form .form-range::-webkit-slider-runnable-track {
+  height: 6px;
+  background: linear-gradient(90deg, #4ca3ff, #34ffb8);
+  border-radius: 10px;
+}
+
+.contact-form .form-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #ffffff;
+  border-radius: 50%;
+  margin-top: -6px;
+  box-shadow: 0 0 10px rgba(52, 255, 184, 0.7);
+}
+
+.contact-form .form-range::-moz-range-track {
+  height: 6px;
+  background: linear-gradient(90deg, #4ca3ff, #34ffb8);
+  border-radius: 10px;
+}
+
+.contact-form .form-range::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(52, 255, 184, 0.7);
+}
+
+.contact-form .btn {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.contact-form .row > div {
+  margin-bottom: 12px;
+}
+/* --- SĖKMINGO PATEIKIMO POP-UP --- */
+.success-popup {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  background: linear-gradient(90deg, #34ffb8, #4ca3ff);
+  color: #0f0f0f;
+  padding: 18px 26px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: 0 0 25px rgba(52, 255, 184, 0.7);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: 0.4s ease;
+  z-index: 9999;
+}
+
+.success-popup.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* --- CONTACT INFO TAMSUS FONAS --- */
+#contact .info-box {
+  background: rgba(25, 25, 25, 0.85);
+  color: #e8e8e8;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(80, 200, 255, 0.15);
+  backdrop-filter: blur(6px);
+}
+
+/* Antraštės */
+#contact .info-box h3,
+#contact .info-box h4 {
+  color: #4ca3ff;
+}
+
+/* Paprastas tekstas */
+#contact .info-box p {
+  color: #d5d5d5;
+}
+
+/* Ikonų fonas */
+#contact .info-box .icon-box {
+  background: rgba(76, 163, 255, 0.15);
+  border-radius: 10px;
+  color: #34ffb8;
+}
+/* --- FORMOS VALIDACIJOS STILIAI --- */
+.form-group {
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 2px solid rgba(255,255,255,0.15);
+  background: rgba(25,25,25,0.6);
+  color: #e8e8e8;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #4ca3ff;
+}
+
+.form-group.error input {
+  border-color: #ff4c4c;
+}
+
+.form-group.success input {
+  border-color: #34ffb8;
+}
+
+.form-error {
+  font-size: 13px;
+  color: #ff4c4c;
+  margin-top: 4px;
+  display: none;
+}
+
+.form-group.error .form-error {
+  display: block;
+}
+
+/* --- NEAKTYVUS SUBMIT MYGTUKAS --- */
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
 }
