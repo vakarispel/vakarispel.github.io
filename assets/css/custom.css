@@ -710,3 +710,95 @@ button:disabled {
   transform: none !important;
   box-shadow: none !important;
 }
+/* -----------------------
+   MEMORY GAME STYLES
+   ----------------------- */
+
+#game .section-header h2 {
+  color: #4ca3ff;
+}
+
+.game-grid {
+  display: grid;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* grid sizes adjusted via JS by setting CSS variables */
+.game-grid[data-cols="4"] { grid-template-columns: repeat(4, minmax(80px, 1fr)); }
+.game-grid[data-cols="6"] { grid-template-columns: repeat(6, minmax(70px, 1fr)); }
+
+/* Card */
+.card {
+  perspective: 1000px;
+  width: 100%;
+}
+.card-inner {
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* square */
+  transform-style: preserve-3d;
+  transition: transform 0.45s;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* faces */
+.card-face {
+  position: absolute;
+  inset: 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  font-size: 28px;
+  font-weight: 800;
+  color: #0f0f0f;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+/* front (revealed) */
+.card-front {
+  transform: rotateY(180deg);
+  background: linear-gradient(90deg, rgba(76,163,255,0.9), rgba(52,255,184,0.9));
+  color: #02131a;
+}
+
+/* back (hidden) */
+.card-back {
+  background: rgba(25,25,25,0.9);
+  color: #e8e8e8;
+  border: 2px solid rgba(255,255,255,0.04);
+}
+
+/* matched */
+.card.matched .card-inner {
+  box-shadow: 0 0 18px rgba(76,163,255,0.35) inset;
+  cursor: default;
+  transform: rotateY(180deg);
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .game-wrapper { flex-direction: column; }
+  .game-stats { width:100%; }
+  .game-grid[data-cols="6"] { grid-template-columns: repeat(4, minmax(70px, 1fr)); }
+}
+
+/* tidy visuals */
+#game .section-box { background: rgba(25,25,25,0.7); border-radius:12px; padding:14px; }
+/* --- GAME SEKCIJOS ATSTŪMIMAS NUO SIDEBAR --- */
+#game {
+  margin-left: 300px;   /* priderinta prie tavo kairiojo meniu pločio */
+}
+
+/* Mobiliesiems – grąžiname į normalią vietą */
+@media (max-width: 992px) {
+  #game {
+    margin-left: 0;
+  }
+}
