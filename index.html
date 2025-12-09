@@ -1148,6 +1148,45 @@ Laisvalaikiu domiuosi web kūrimu, UI/UX dizainu, programų funkcionalumo tobuli
 
   </footer>
 
+<!-- 🎮 Mano Žaidimas sekcija — PRIDĖTI PO CONTACT SECTION -->
+<section id="game" class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Mano Žaidimas</h2>
+      <p>Rask poras — išbandyk atmintį!</p>
+    </div>
+
+    <div class="game-controls" style="margin-bottom:18px; display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+      <div class="difficulty">
+        <label><input type="radio" name="difficulty" value="easy" checked> Lengvas (4×3)</label>
+        <label style="margin-left:10px;"><input type="radio" name="difficulty" value="hard"> Sunkus (6×4)</label>
+      </div>
+
+      <div style="margin-left:auto; display:flex; gap:10px;">
+        <button id="game-start" class="btn">Start</button>
+        <button id="game-reset" class="btn">Atnaujinti</button>
+      </div>
+    </div>
+
+    <div class="game-wrapper" style="display:flex; gap:20px; align-items:flex-start; flex-wrap:wrap;">
+      <div class="game-board-wrap" style="flex:1 1 600px;">
+        <div id="game-grid" class="game-grid" aria-live="polite"></div>
+      </div>
+
+      <aside class="game-stats" style="width:260px;">
+        <div class="section-box">
+          <h4>Statistika</h4>
+          <p>Ėjimų skaičius: <span id="moves-count">0</span></p>
+          <p>Sutapusių porų: <span id="matched-count">0</span></p>
+          <div id="win-message" style="margin-top:12px; font-weight:800; display:none; color:#34ffb8;"></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+
+
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
@@ -1169,7 +1208,7 @@ Laisvalaikiu domiuosi web kūrimu, UI/UX dizainu, programų funkcionalumo tobuli
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/custom.js"></script>
-
+  
 </body>
 
 </html>
